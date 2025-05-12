@@ -1,3 +1,4 @@
+# Edited TimesNet model
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -16,6 +17,7 @@ def FFT_for_Period(x, k=2):
     top_list = top_list.detach().cpu().numpy()
     period = x.shape[1] // top_list
     return period, abs(xf).mean(-1)[:, top_list]
+    print("mod")
 
 
 class TimesBlock(nn.Module):
